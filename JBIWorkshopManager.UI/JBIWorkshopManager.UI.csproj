@@ -9,7 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JBIWorkshopManager.Application\JBIWorkshopManager.Core.csproj" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<ProjectReference Include="..\JBIWorkshopManager.Core\JBIWorkshopManager.Core.csproj" />
     <ProjectReference Include="..\JBIWorkshopManager.Infrastructure\JBIWorkshopManager.Infrastructure.csproj" />
     <ProjectReference Include="..\JBIWorkshopManager.Shared\JBIWorkshopManager.Shared.csproj" />
   </ItemGroup>
