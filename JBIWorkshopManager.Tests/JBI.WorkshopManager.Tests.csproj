@@ -20,9 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-	<ProjectReference Include="..\JBIWorkshopManager.Core\JBIWorkshopManager.Core.csproj" />
-    <ProjectReference Include="..\JBIWorkshopManager.Domain\JBIWorkshopManager.Domain.csproj" />
-    <ProjectReference Include="..\JBIWorkshopManager.Infrastructure\JBIWorkshopManager.Infrastructure.csproj" />
+	<ProjectReference Include="..\JBIWorkshopManager.Core\JBI.WorkshopManager.Core.csproj" />
+    <ProjectReference Include="..\JBIWorkshopManager.Domain\JBI.WorkshopManager.Domain.csproj" />
+    <ProjectReference Include="..\JBIWorkshopManager.Infrastructure\JBI.WorkshopManager.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

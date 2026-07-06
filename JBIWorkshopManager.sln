@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.37411.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBIWorkshopManager.UI", "JBIWorkshopManager.UI\JBIWorkshopManager.UI.csproj", "{D459C426-A1A8-4C5B-A1BD-B8F15C8F7D8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBI.WorkshopManager.UI", "JBIWorkshopManager.UI\JBI.WorkshopManager.UI.csproj", "{D459C426-A1A8-4C5B-A1BD-B8F15C8F7D8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBIWorkshopManager.Domain", "JBIWorkshopManager.Domain\JBIWorkshopManager.Domain.csproj", "{29637D5F-3645-4D6A-B40F-61845ECBF55E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBI.WorkshopManager.Domain", "JBIWorkshopManager.Domain\JBI.WorkshopManager.Domain.csproj", "{29637D5F-3645-4D6A-B40F-61845ECBF55E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBIWorkshopManager.Infrastructure", "JBIWorkshopManager.Infrastructure\JBIWorkshopManager.Infrastructure.csproj", "{C6213074-B6E8-4473-BF3C-51B90C7F3494}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBI.WorkshopManager.Infrastructure", "JBIWorkshopManager.Infrastructure\JBI.WorkshopManager.Infrastructure.csproj", "{C6213074-B6E8-4473-BF3C-51B90C7F3494}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBIWorkshopManager.Shared", "JBIWorkshopManager.Shared\JBIWorkshopManager.Shared.csproj", "{490133F0-FCB7-4948-8C44-4128D37B4041}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBI.WorkshopManager.Shared", "JBIWorkshopManager.Shared\JBI.WorkshopManager.Shared.csproj", "{490133F0-FCB7-4948-8C44-4128D37B4041}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBIWorkshopManager.Tests", "JBIWorkshopManager.Tests\JBIWorkshopManager.Tests.csproj", "{2B2F1FA4-ECC6-49A8-B08F-159668A15844}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBI.WorkshopManager.Tests", "JBIWorkshopManager.Tests\JBI.WorkshopManager.Tests.csproj", "{2B2F1FA4-ECC6-49A8-B08F-159668A15844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBIWorkshopManager.Core", "JBIWorkshopManager.Core\JBIWorkshopManager.Core.csproj", "{8BA49073-40FA-0BAC-B075-C6CE5B040A91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBI.WorkshopManager.Core", "JBIWorkshopManager.Core\JBI.WorkshopManager.Core.csproj", "{8BA49073-40FA-0BAC-B075-C6CE5B040A91}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject

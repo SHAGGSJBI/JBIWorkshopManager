@@ -13,6 +13,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     <PackageReference Include="Serilog" Version="4.3.1" />
     <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
@@ -20,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-	<ProjectReference Include="..\JBIWorkshopManager.Core\JBIWorkshopManager.Core.csproj" />
-    <ProjectReference Include="..\JBIWorkshopManager.Domain\JBIWorkshopManager.Domain.csproj" />
-    <ProjectReference Include="..\JBIWorkshopManager.Shared\JBIWorkshopManager.Shared.csproj" />
+	<ProjectReference Include="..\JBIWorkshopManager.Core\JBI.WorkshopManager.Core.csproj" />
+    <ProjectReference Include="..\JBIWorkshopManager.Domain\JBI.WorkshopManager.Domain.csproj" />
+    <ProjectReference Include="..\JBIWorkshopManager.Shared\JBI.WorkshopManager.Shared.csproj" />
   </ItemGroup>
 
 </Project>

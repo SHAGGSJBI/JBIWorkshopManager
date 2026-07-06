@@ -9,18 +9,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
+    <PackageReference Include="Serilog" Version="4.3.1" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-	<ProjectReference Include="..\JBIWorkshopManager.Core\JBIWorkshopManager.Core.csproj" />
-    <ProjectReference Include="..\JBIWorkshopManager.Infrastructure\JBIWorkshopManager.Infrastructure.csproj" />
-    <ProjectReference Include="..\JBIWorkshopManager.Shared\JBIWorkshopManager.Shared.csproj" />
+	<ProjectReference Include="..\JBIWorkshopManager.Core\JBI.WorkshopManager.Core.csproj" />
+    <ProjectReference Include="..\JBIWorkshopManager.Infrastructure\JBI.WorkshopManager.Infrastructure.csproj" />
+    <ProjectReference Include="..\JBIWorkshopManager.Shared\JBI.WorkshopManager.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

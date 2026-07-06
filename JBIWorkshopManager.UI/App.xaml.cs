@@ -1,14 +1,49 @@
-﻿using System.Configuration;
-using System.Data;
+﻿using JBI.WorkshopManager.UI.Hosting;
+using Microsoft.Extensions.Hosting;
+using Serilog;
 using System.Windows;
 
-namespace JBIWorkshopManager.UI
+namespace JBI.WorkshopManager.UI;
+
+public partial class App : Application
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : System.Windows.Application
+    private readonly IHost _host;
+
+    public App()
     {
+        _host = Host.CreateDefaultBuilder()
+            .ConfigureWorkshopManager()
+            .Build();
     }
 
+    protected override async void OnStartup(StartupEventArgs e)
+    {
+        try
+        {
+            await _host.StartAsync();
+
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+
+            base.OnStartup(e);
+        }
+        catch (Exception ex)
+        {
+            Log.Fatal(ex, "Application failed during startup.");
+            Shutdown();
+        }
+    }
+
+    protected override async void OnExit(ExitEventArgs e)
+    {
+        try
+        {
+            await _host.StopAsync();
+        }
+        finally
+        {
+            Log.CloseAndFlush();
+            base.OnExit(e);
+        }
+    }
 }
