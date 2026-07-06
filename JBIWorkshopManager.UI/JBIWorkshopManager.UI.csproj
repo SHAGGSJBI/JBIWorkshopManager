@@ -23,4 +23,12 @@
     <ProjectReference Include="..\JBIWorkshopManager.Shared\JBIWorkshopManager.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
