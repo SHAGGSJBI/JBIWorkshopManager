@@ -43,8 +43,13 @@
   <ItemGroup>
     <Folder Include="Configuration\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Views\" />
     <Folder Include="Services\" />
+    <Folder Include="Views\Customers\" />
+    <Folder Include="Views\Inventory\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="Views\Reports\" />
+    <Folder Include="Views\Purchasing\" />
+    <Folder Include="Views\Workshop\" />
   </ItemGroup>
 
 </Project>
