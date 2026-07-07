@@ -2,6 +2,9 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using JBI.WorkshopManager.UI;
+using JBI.WorkshopManager.UI.ViewModels;
+using JBI.WorkshopManager.UI.DependencyInjection;
 
 namespace JBI.WorkshopManager.UI.Hosting;
 
@@ -23,9 +26,7 @@ public static class HostBuilderExtensions
 
         builder.ConfigureServices((context, services) =>
         {
-            // Infrastructure registrations
-            // Core registrations
-            // UI registrations
+            services.AddUIServices();
         });
 
         return builder;

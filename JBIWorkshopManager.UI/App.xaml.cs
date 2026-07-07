@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using System.Windows;
+using Microsoft.Extensions.DependencyInjection;
+using JBI.WorkshopManager.UI.Windows;
 
 namespace JBI.WorkshopManager.UI;
 
@@ -22,7 +24,7 @@ public partial class App : Application
         {
             await _host.StartAsync();
 
-            var mainWindow = new MainWindow();
+            var mainWindow = _host.Services.GetRequiredService<MainWindow>();
             mainWindow.Show();
 
             base.OnStartup(e);
