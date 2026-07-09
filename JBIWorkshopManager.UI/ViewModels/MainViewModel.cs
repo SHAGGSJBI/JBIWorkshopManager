@@ -1,24 +1,34 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using JBI.WorkshopManager.UI.Navigation;
 using JBI.WorkshopManager.UI.ViewModels.Base;
+using Microsoft.Extensions.Logging;
 
 namespace JBI.WorkshopManager.UI.ViewModels;
 
 public sealed class MainViewModel : ViewModelBase
 {
     private readonly ILogger<MainViewModel> _logger;
+    private readonly INavigationService _navigationService;
 
-    private string _applicationTitle = "JBI Workshop Manager";
-
-    public MainViewModel(ILogger<MainViewModel> logger)
+    public MainViewModel(
+        ILogger<MainViewModel> logger,
+        INavigationService navigationService,
+        DashboardViewModel dashboardViewModel)
     {
         _logger = logger;
+        _navigationService = navigationService;
+
+        _navigationService.CurrentViewChanged += OnCurrentViewChanged;
+
+        _navigationService.NavigateTo(dashboardViewModel);
 
         _logger.LogInformation("MainViewModel created.");
     }
 
-    public string ApplicationTitle
+    public ViewModelBase? CurrentViewModel =>
+        _navigationService.CurrentViewModel;
+
+    private void OnCurrentViewChanged()
     {
-        get => _applicationTitle;
-        set => SetProperty(ref _applicationTitle, value);
+        OnPropertyChanged(nameof(CurrentViewModel));
     }
 }

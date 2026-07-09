@@ -55,11 +55,8 @@
         <!-- Main Workspace -->
         <Grid Margin="15">
 
-            <TextBlock Text="Welcome to JBI Workshop Manager"
-                   FontSize="28"
-                   FontWeight="Bold"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
+            <ContentControl
+        Content="{Binding CurrentViewModel}" />
 
         </Grid>
 
