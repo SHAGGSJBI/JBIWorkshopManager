@@ -37,18 +37,24 @@
             BorderBrush="LightGray"
             BorderThickness="0,0,1,0">
 
-            <StackPanel Margin="10">
+            <ListBox
+    ItemsSource="{Binding NavigationItems}"
+    BorderThickness="0"
+    Margin="10">
 
-                <Button Content="Dashboard" Margin="0,5"/>
-                <Button Content="Workshop Jobs" Margin="0,5"/>
-                <Button Content="Customers" Margin="0,5"/>
-                <Button Content="Machines" Margin="0,5"/>
-                <Button Content="Inventory" Margin="0,5"/>
-                <Button Content="Purchasing" Margin="0,5"/>
-                <Button Content="Reports" Margin="0,5"/>
-                <Button Content="Settings" Margin="0,5"/>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
 
-            </StackPanel>
+                        <Button
+                Content="{Binding Title}"
+                Command="{Binding DataContext.NavigateCommand,
+                                  RelativeSource={RelativeSource AncestorType=Window}}"
+                CommandParameter="{Binding}" />
+
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
 
         </Border>
 

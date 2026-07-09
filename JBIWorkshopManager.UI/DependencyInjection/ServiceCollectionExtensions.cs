@@ -11,6 +11,7 @@ public static class ServiceCollectionExtensions
     {
         // Services
         services.AddSingleton<INavigationService, NavigationService>();
+        services.AddSingleton<NavigationRegistry>();
 
         // ViewModels
         services.AddSingleton<MainViewModel>();

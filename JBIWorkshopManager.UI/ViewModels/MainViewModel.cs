@@ -1,6 +1,9 @@
 ﻿using JBI.WorkshopManager.UI.Navigation;
 using JBI.WorkshopManager.UI.ViewModels.Base;
 using Microsoft.Extensions.Logging;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
+using JBI.WorkshopManager.UI.Commands;
 
 namespace JBI.WorkshopManager.UI.ViewModels;
 
@@ -20,6 +23,18 @@ public sealed class MainViewModel : ViewModelBase
         _navigationService.CurrentViewChanged += OnCurrentViewChanged;
 
         _navigationService.NavigateTo(dashboardViewModel);
+        NavigationItems = new ObservableCollection<NavigationItem>
+{
+    new("Dashboard", "🏠", dashboardViewModel)
+};
+
+        NavigateCommand = new RelayCommand(item =>
+        {
+            if (item is NavigationItem navigationItem)
+            {
+                _navigationService.NavigateTo(navigationItem.ViewModel);
+            }
+        });
 
         _logger.LogInformation("MainViewModel created.");
     }
@@ -31,4 +46,8 @@ public sealed class MainViewModel : ViewModelBase
     {
         OnPropertyChanged(nameof(CurrentViewModel));
     }
+
+    public ObservableCollection<NavigationItem> NavigationItems { get; }
+
+    public ICommand NavigateCommand { get; }
 }
