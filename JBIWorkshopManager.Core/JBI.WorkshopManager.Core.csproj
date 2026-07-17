@@ -6,9 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\JBIWorkshopManager.Domain\JBIWorkshopManager.Domain.csproj" />
-    <ProjectReference Include="..\JBIWorkshopManager.Shared\JBIWorkshopManager.Shared.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\JBIWorkshopManager.Domain\JBI.WorkshopManager.Domain.csproj" />
+		<ProjectReference Include="..\JBIWorkshopManager.Shared\JBI.WorkshopManager.Shared.csproj" />
+	</ItemGroup>
 
 </Project>

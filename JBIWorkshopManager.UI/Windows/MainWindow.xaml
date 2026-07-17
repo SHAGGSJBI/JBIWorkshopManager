@@ -59,12 +59,9 @@
         </Border>
 
         <!-- Main Workspace -->
-        <Grid Margin="15">
-
-            <ContentControl
-        Content="{Binding CurrentViewModel}" />
-
-        </Grid>
+        <ContentControl
+    x:Name="WorkspaceContent"
+    Margin="15"/>
 
     </DockPanel>
 
