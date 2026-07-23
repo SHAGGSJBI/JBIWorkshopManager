@@ -9,7 +9,7 @@
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="Events\" />
-    <Folder Include="Interface\" />
+    <Folder Include="Interfaces\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>
 

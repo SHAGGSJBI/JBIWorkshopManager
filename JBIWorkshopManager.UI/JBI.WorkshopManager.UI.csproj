@@ -43,6 +43,12 @@
   <ItemGroup>
     <Folder Include="Configuration\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Features\Machines\" />
+    <Folder Include="Features\Inventory\" />
+    <Folder Include="Features\Settings\" />
+    <Folder Include="Features\Reports\" />
+    <Folder Include="Features\Purchasing\" />
+    <Folder Include="Features\WorkOrders\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

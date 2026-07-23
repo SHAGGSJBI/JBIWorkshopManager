@@ -10,6 +10,8 @@ public interface IMachineRepository
 
     Task<Machine?> GetByItemCodeAsync(string itemCode);
 
+    Task<Machine?> GetByMachineNameAsync(string machineName);
+
     Task AddAsync(Machine machine);
 
     Task UpdateAsync(Machine machine);

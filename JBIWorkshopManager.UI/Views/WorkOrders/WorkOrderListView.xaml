@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="JBI.WorkshopManager.UI.Views.WorkOrders.WorkOrderListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Heading -->
+        <TextBlock Text="Active Work Orders"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   Margin="0,0,0,20"/>
+
+        <!-- Work Orders -->
+        <DataGrid Grid.Row="1"
+                  ItemsSource="{Binding WorkOrders}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserAddRows="False">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn
+                    Header="WO Number"
+                    Binding="{Binding WorkOrderNumber}"
+                    Width="120"/>
+
+                <DataGridTextColumn
+                    Header="Machine"
+                    Binding="{Binding Machine.MachineName}"
+                    Width="220"/>
+
+                <DataGridTextColumn
+                    Header="Qty"
+                    Binding="{Binding QuantityOrdered}"
+                    Width="80"/>
+
+                <DataGridTextColumn
+                    Header="Completed"
+                    Binding="{Binding QuantityCompleted}"
+                    Width="90"/>
+
+                <DataGridTextColumn
+                    Header="Status"
+                    Binding="{Binding Status}"
+                    Width="140"/>
+
+                <DataGridTextColumn
+                    Header="Due Date"
+                    Binding="{Binding DueDate, StringFormat=dd/MM/yyyy}"
+                    Width="120"/>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <Button Grid.Row="2"
+                Content="New Work Order"
+                Width="180"
+                Height="40"
+                HorizontalAlignment="Right"
+                Margin="0,20,0,0"/>
+
+    </Grid>
+
+</UserControl>

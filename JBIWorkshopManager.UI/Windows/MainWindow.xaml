@@ -3,65 +3,145 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:JBI.WorkshopManager.UI.Windows"
         mc:Ignorable="d"
-        Title="{Binding ApplicationTitle}" Height="450" Width="800">
-    <DockPanel>
+        Title="{Binding ApplicationTitle}"
+        Height="900"
+        Width="1500"
+        MinHeight="700"
+        MinWidth="1200"
+        WindowStartupLocation="CenterScreen">
 
-        <!-- Top Menu -->
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File"/>
-            <MenuItem Header="_Workshop"/>
-            <MenuItem Header="_Inventory"/>
-            <MenuItem Header="_Purchasing"/>
-            <MenuItem Header="_Reports"/>
-            <MenuItem Header="_Help"/>
-        </Menu>
+    <DockPanel Background="#F4F6F8">
 
-        <!-- Bottom Status Bar -->
+        <!-- Header -->
+        <Border DockPanel.Dock="Top"
+                Height="70"
+                Background="#C8102E">
+
+            <Grid Margin="20,0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock
+                        Text="JBI Workshop Manager"
+                        Foreground="White"
+                        FontSize="28"
+                        FontWeight="Bold"/>
+
+                    <TextBlock
+                        Text="Manufacturing ERP"
+                        Foreground="White"
+                        Opacity="0.8"
+                        FontSize="13"/>
+
+                </StackPanel>
+
+                <StackPanel Grid.Column="1"
+                            VerticalAlignment="Center">
+
+                    <TextBlock
+                        Text="Version 0.3.2"
+                        Foreground="White"
+                        HorizontalAlignment="Right"/>
+
+                    <TextBlock
+                        Text="John Berends Implements"
+                        Foreground="White"
+                        Opacity="0.8"
+                        HorizontalAlignment="Right"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+        <!-- Status Bar -->
         <StatusBar DockPanel.Dock="Bottom">
+
             <StatusBarItem>
                 <TextBlock Text="Ready"/>
             </StatusBarItem>
 
-            <Separator/>
-
-            <StatusBarItem HorizontalAlignment="Right">
-                <TextBlock Text="{Binding ApplicationTitle}"/>
-            </StatusBarItem>
         </StatusBar>
 
-        <!-- Left Navigation -->
-        <Border Width="220"
-            DockPanel.Dock="Left"
-            BorderBrush="LightGray"
-            BorderThickness="0,0,1,0">
+        <!-- Navigation -->
+        <Border DockPanel.Dock="Left"
+                Width="240"
+                Background="White"
+                BorderBrush="#DDDDDD"
+                BorderThickness="0,0,1,0">
 
-            <ListBox
-    ItemsSource="{Binding NavigationItems}"
-    BorderThickness="0"
-    Margin="10">
+            <DockPanel>
 
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
+                <TextBlock
+                    DockPanel.Dock="Top"
+                    Text="Navigation"
+                    FontWeight="Bold"
+                    FontSize="18"
+                    Margin="20"/>
 
-                        <Button
-                Content="{Binding Title}"
-                Command="{Binding DataContext.NavigateCommand,
-                                  RelativeSource={RelativeSource AncestorType=Window}}"
-                CommandParameter="{Binding}" />
+                <ListBox
+                    ItemsSource="{Binding NavigationItems}"
+                    BorderThickness="0"
+                    Margin="10">
 
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
+                    <ListBox.ItemTemplate>
 
-            </ListBox>
+                        <DataTemplate>
+
+                            <Button
+                                Margin="5"
+                                Height="44"
+                                Command="{Binding DataContext.NavigateCommand,
+                                                  RelativeSource={RelativeSource AncestorType=Window}}"
+                                CommandParameter="{Binding}">
+
+                                <StackPanel Orientation="Horizontal">
+
+                                    <TextBlock
+                                        Text="{Binding Icon}"
+                                        FontSize="18"
+                                        Margin="0,0,10,0"/>
+
+                                    <TextBlock
+                                        Text="{Binding Title}"
+                                        FontSize="15"/>
+
+                                </StackPanel>
+
+                            </Button>
+
+                        </DataTemplate>
+
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+
+            </DockPanel>
 
         </Border>
 
-        <!-- Main Workspace -->
-        <ContentControl
-    x:Name="WorkspaceContent"
-    Margin="15"/>
+        <!-- Workspace -->
+        <Grid Margin="20">
+
+            <Border
+                Background="White"
+                CornerRadius="10"
+                BorderBrush="#DDDDDD"
+                BorderThickness="1">
+
+                <ContentControl
+                    Content="{Binding CurrentViewModel}" />
+
+            </Border>
+
+        </Grid>
 
     </DockPanel>
 

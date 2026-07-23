@@ -44,6 +44,14 @@ public sealed class InMemoryMachineRepository : IMachineRepository
                 x.ItemCode.Equals(itemCode, StringComparison.OrdinalIgnoreCase)));
     }
 
+    public Task<Machine?> GetByMachineNameAsync(string machineName)
+    {
+        return Task.FromResult(
+            _machines.FirstOrDefault(x =>
+                x.MachineName.Equals(machineName,
+                    StringComparison.OrdinalIgnoreCase)));
+    }
+
     public Task AddAsync(Machine machine)
     {
         _machines.Add(machine);

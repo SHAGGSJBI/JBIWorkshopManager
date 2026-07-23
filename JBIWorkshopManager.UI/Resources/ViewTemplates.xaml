@@ -1,11 +1,19 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:vm="clr-namespace:JBI.WorkshopManager.UI.ViewModels"
-    xmlns:views="clr-namespace:JBI.WorkshopManager.UI.Views.Dashboard">
 
-    <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
-        <views:DashboardView/>
+    xmlns:dashboard="clr-namespace:JBI.WorkshopManager.UI.Features.Dashboard"
+    xmlns:workorders="clr-namespace:JBI.WorkshopManager.UI.ViewModels.WorkOrders"
+    xmlns:workorderviews="clr-namespace:JBI.WorkshopManager.UI.Views.WorkOrders">
+
+    <!-- Dashboard -->
+    <DataTemplate DataType="{x:Type dashboard:DashboardViewModel}">
+        <dashboard:DashboardView/>
+    </DataTemplate>
+
+    <!-- Work Orders -->
+    <DataTemplate DataType="{x:Type workorders:WorkOrderListViewModel}">
+        <workorderviews:WorkOrderListView/>
     </DataTemplate>
 
 </ResourceDictionary>

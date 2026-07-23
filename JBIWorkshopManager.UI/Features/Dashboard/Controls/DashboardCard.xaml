@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="JBI.WorkshopManager.UI.Features.Dashboard.Controls.DashboardCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Border
+        Margin="10"
+        Padding="20"
+        Background="White"
+        BorderBrush="#D8DCE3"
+        BorderThickness="1"
+        CornerRadius="10">
+
+        <StackPanel>
+
+            <TextBlock
+                Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                FontSize="16"
+                FontWeight="SemiBold"
+                Foreground="#666"/>
+
+            <TextBlock
+                Margin="0,15,0,0"
+                Text="{Binding Value, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                FontSize="36"
+                FontWeight="Bold"
+                Foreground="#0F2C5C"/>
+
+        </StackPanel>
+
+    </Border>
+
+</UserControl>

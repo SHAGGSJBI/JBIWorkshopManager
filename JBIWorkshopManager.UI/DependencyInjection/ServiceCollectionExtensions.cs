@@ -1,6 +1,9 @@
-﻿using JBI.WorkshopManager.UI.Navigation;
+﻿using JBI.WorkshopManager.UI.Features.Dashboard;
+using JBI.WorkshopManager.UI.Navigation;
 using JBI.WorkshopManager.UI.ViewModels;
+using JBI.WorkshopManager.UI.ViewModels.WorkOrders;
 using JBI.WorkshopManager.UI.Views;
+using JBI.WorkshopManager.UI.Views.WorkOrders;
 using JBI.WorkshopManager.UI.Windows;
 using JBIWorkshopManager.Core.Interfaces;
 using JBIWorkshopManager.Infrastructure.Repositories;
@@ -18,15 +21,22 @@ public static class ServiceCollectionExtensions
 
         // Repositories
         services.AddSingleton<IMachineRepository, InMemoryMachineRepository>();
+        services.AddSingleton<IWorkOrderRepository, InMemoryWorkOrderRepository>();
 
         // ViewModels
         services.AddSingleton<MainViewModel>();
         services.AddSingleton<DashboardViewModel>();
+
+        services.AddTransient<WorkOrderListViewModel>();
+        services.AddTransient<NewWorkOrderViewModel>();
         services.AddTransient<MachineCatalogueViewModel>();
+
+        // Views
+        services.AddTransient<NewWorkOrderView>();
+        services.AddTransient<MachineCatalogueView>();
 
         // Windows
         services.AddSingleton<MainWindow>();
-        services.AddTransient<MachineCatalogueView>();
 
         return services;
     }
